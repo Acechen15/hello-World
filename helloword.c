@@ -1,15 +1,17 @@
-void insertionSort(int* a, int length)
+void inSort(int* array, int length)
 {
-  int i;
-  int j;
-  for(i = 1; i < length; ++i)
+  int i,j;
+  for (i = 2; i <= length; ++i)
   {
-    int key = a[i];
-    for(j = i - 1; j >= 0 && key < a[j]; --j)
+    array[0] = array[i]       // 给监视哨赋值
+    j = i - 1;                // 这是带比较的最右边的数
+    while(array[0] < array[j])
     {
-      a[j + 1] = a[j];
+      array[j + 1] = array[j];  //数据右移
+      j--;
     }
     
-    a[j + 1] = key; 
+    array[j + 1] = array[0]
+    
   }
 }
